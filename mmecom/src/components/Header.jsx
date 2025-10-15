@@ -1,5 +1,6 @@
 import React from 'react';
 import './Header.css'; // We'll create this for styling
+import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 
 const Header = () => {
   return (
@@ -8,11 +9,14 @@ const Header = () => {
         <img src="/assets/logo.png" alt="Logo" className="logo" />
       </div>
       <div className="header-center">
-        <input
-          type="text"
-          placeholder="Search..."
-          className="search-bar"
-        />
+        <div className="search-container">
+          <input
+            type="text"
+            placeholder="Search..."
+            className="search-bar"
+          />
+          <SearchOutlinedIcon className="search-icon" />
+        </div>
       </div>
       <div className="header-right">
         <div className="icon-placeholder">Heart</div>
