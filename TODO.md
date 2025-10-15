@@ -1,11 +1,5 @@
-# TODO List for Creating Header Component
+# TODO: Add logo.png as logo in Header component
 
-- [x] Create `src/components/Header.jsx` with logo placeholder, search bar, and three icon placeholders (heart, cart, profile)
-- [x] Edit `src/App.jsx` to import and render the Header component, replacing default Vite content
-- [x] Run dev server to test the header display
-
-# TODO List for Making App Full Screen
-
-- [x] Edit `src/index.css` to remove centering and ensure full width
-- [x] Edit `src/App.css` to set `.app` to full width and height
-- [x] Test full-screen display in browser (HMR updates applied, app should now be full screen)
+- [x] Edit mmecom/src/components/Header.jsx: Replace the text "Logo" with an img tag pointing to /assets/logo.png
+- [x] Edit mmecom/src/components/Header.css: Update .logo styles to suit an image (set width, height, etc.)
+- [x] Test the header rendering in the app to ensure the logo displays correctly (App is running on http://localhost:5174/)
