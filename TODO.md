@@ -32,3 +32,17 @@
 # TODO: Move the search icon a little more to the right
 
 - [x] Increase the right position of .search-icon in Header.css
+
+# TODO: Replace Heart, Cart, Profile text with icons and remove background
+
+- [x] Import MUI icons for Heart, Cart, Profile in Header.jsx
+- [x] Replace text in icon-placeholder divs with icons
+- [x] Update Header.css to remove background from .icon-placeholder and style icons
+
+# TODO: Implement responsive design for smaller screens
+
+- [x] Add hamburger menu icon on the left for small screens
+- [x] Hide search bar on small screens
+- [x] Center the logo on small screens
+- [x] Show only profile icon on the right for small screens
+- [x] Add media queries in Header.css for screens below 768px
