@@ -1,17 +1,16 @@
-import './App.css'
 import React from 'react';
 import Header from './components/Header';
 import ImageCarousel from './components/ImageCarousel';
+import SecondaryCarousel from './components/SecondaryCarousel';
 import './App.css';
 
 function App() {
   return (
-    
-    <div className="App">
+    <div className="app">
       <Header />
-      {/* Additional content can be added here */}
       <main>
-        <ImageCarousel />
+        
+        <SecondaryCarousel />
       </main>
     </div>
   );

@@ -1,0 +1,230 @@
+.secondary-carousel {
+  display: flex;
+  justify-content: center;
+  padding: 40px 0; /* Removed horizontal padding */
+  background-color: #f8f9fa;
+  overflow: hidden;
+}
+
+.secondary-carousel-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 1250px;
+  margin: 0 auto;
+  position: relative;
+  left: 30px;
+}
+
+.secondary-carousel-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transition: all 1s ease-in-out;
+  flex-shrink: 0; /* Prevent items from shrinking */
+}
+
+/* Initial positions and sizes */
+.secondary-carousel-item.item-0 {
+  width: 23.75%; /* 285 / 1200 */
+  height: 500px;
+  opacity: 1;
+}
+
+.secondary-carousel-item.item-1 {
+  width: 50.83%; /* 610 / 1200 */
+  height: 500px;
+  opacity: 1;
+}
+
+.secondary-carousel-item.item-2 {
+  width: 23.75%; /* 285 / 1200 */
+  height: 500px;
+  opacity: 1;
+}
+
+.secondary-carousel-item.item-3 {
+  width: 0%;
+  height: 500px;
+  opacity: 0; /* Start hidden */
+}
+
+.secondary-carousel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.secondary-carousel-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, transparent 60%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 30px;
+  color: white;
+}
+
+.secondary-carousel-content {
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.secondary-carousel-container.animating .secondary-carousel-content {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.secondary-carousel-content h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.secondary-carousel-content p {
+  font-size: 1rem;
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+
+.secondary-shop-button {
+  background-color: #fff;
+  color: #333;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.secondary-shop-button:hover {
+  background-color: #006666;
+  color: white;
+}
+
+/* Animation */
+.secondary-carousel-container.animating .secondary-carousel-item {
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.secondary-carousel-container.animating .item-0 {
+  animation-name: disappear;
+}
+
+.secondary-carousel-container.animating .item-1 {
+  animation-name: moveToLeft;
+}
+
+.secondary-carousel-container.animating .item-2 {
+  animation-name: moveToCenter;
+}
+
+.secondary-carousel-container.animating .item-3 {
+  animation-name: appearOnRight;
+}
+
+@keyframes disappear {
+  from { width: 23.75%; opacity: 1; margin-right: 10px; }
+  to { width: 0%; opacity: 0; margin-right: 0; }
+}
+
+@keyframes moveToLeft {
+  from { width: 50.83%; }
+  to { width: 23.75%; }
+}
+
+@keyframes moveToCenter {
+  from { width: 23.75%; }
+  to { width: 50.83%; }
+}
+
+@keyframes appearOnRight {
+  from { width: 0%; opacity: 0; }
+  to { width: 23.75%; opacity: 1; }
+}
+
+/* Responsive Design for Tablets */
+@media (max-width: 1200px) {
+  .secondary-carousel-item.item-0,
+  .secondary-carousel-item.item-1,
+  .secondary-carousel-item.item-2 {
+    height: 420px;
+  }
+}
+
+@media (max-width: 992px) {
+  .secondary-carousel-item.item-0,
+  .secondary-carousel-item.item-1,
+  .secondary-carousel-item.item-2 {
+    height: 350px;
+  }
+
+  .secondary-carousel-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .secondary-carousel-content p {
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+  }
+
+  .secondary-shop-button {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+  .secondary-carousel {
+    padding: 20px 0;
+  }
+
+  .secondary-carousel-container {
+    width: 100%;
+    /* The animation will handle the transition, so we don't need a gap */
+    gap: 0;
+  }
+
+  .secondary-carousel-item {
+    /* On mobile, items will stack and fade */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  /* Only show the main item and the next one for the fade effect */
+  .secondary-carousel-item.item-0 {
+    opacity: 1;
+    position: relative; /* Takes up space in the container */
+    height: 400px; /* Adjust height for mobile */
+  }
+
+  .secondary-carousel-item.item-1,
+  .secondary-carousel-item.item-2,
+  .secondary-carousel-item.item-3 {
+    opacity: 0;
+    display: none; /* Hide other items to simplify the DOM */
+  }
+
+  /* Mobile Animation */
+  .secondary-carousel-container.animating .item-0 {
+    animation: mobileFadeOut 1.5s ease-in-out forwards;
+  }
+
+  @keyframes mobileFadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+  }
+}
