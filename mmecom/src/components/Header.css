@@ -134,15 +134,16 @@
   cursor: pointer;
   /* opacity: 0.7; */
   transition: opacity 0.3s;
+  margin-left: 40px;
 }
 
 .deals-button {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  background-color: #009aa5;
-  border: 1px solid #007ca1;
-  color: rgb(255, 182, 87);
+  background-color: #03b6c3;
+  border: 1px solid #03b6c3;
+  color: rgb(255, 228, 84);
   padding: 0.9rem 2rem;
   border-radius: 5px;
   font-weight: bold;
@@ -214,6 +215,10 @@
   }
 
   .separator {
+    display: none;
+  }
+
+  .sub-header {
     display: none;
   }
 }

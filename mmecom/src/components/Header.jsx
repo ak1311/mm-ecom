@@ -13,6 +13,7 @@ import SetMealOutlinedIcon from '@mui/icons-material/SetMealOutlined';
 import BreakfastDiningOutlinedIcon from '@mui/icons-material/BreakfastDiningOutlined';
 import AcUnitOutlinedIcon from '@mui/icons-material/AcUnitOutlined';
 import MenuItem from '@mui/material/MenuItem';
+import Divider from '@mui/material/Divider';
 
 const Header = () => {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -20,6 +21,9 @@ const Header = () => {
 
   const [categoryMenuAnchorEl, setCategoryMenuAnchorEl] = useState(null);
   const categoryMenuOpen = Boolean(categoryMenuAnchorEl);
+
+  const [mobileMenuAnchorEl, setMobileMenuAnchorEl] = useState(null);
+  const mobileMenuOpen = Boolean(mobileMenuAnchorEl);
 
   const handleCategoryMenuClick = (event) => {
     setCategoryMenuAnchorEl(event.currentTarget);
@@ -37,11 +41,19 @@ const Header = () => {
     setCategoryMenuAnchorEl(null);
   };
 
+  const handleMobileMenuOpen = (event) => {
+    setMobileMenuAnchorEl(event.currentTarget);
+  };
+
+  const handleMobileMenuClose = () => {
+    setMobileMenuAnchorEl(null);
+  };
+
   return (
     <>
       <header className="header">
         <div className="header-left">
-          <MenuIcon className="hamburger-menu" />
+          <MenuIcon className="hamburger-menu" onClick={handleMobileMenuOpen} />
           <img src="/assets/logo.png" alt="Logo" className="logo" />
         </div>
         <div className="header-center">
@@ -76,6 +88,32 @@ const Header = () => {
           >
             <MenuItem onClick={handleClose}>Login</MenuItem>
             <MenuItem onClick={handleClose}>Register</MenuItem>
+          </Menu>
+          <Menu
+            anchorEl={mobileMenuAnchorEl}
+            open={mobileMenuOpen}
+            onClose={handleMobileMenuClose}
+            anchorOrigin={{
+              vertical: 'top',
+              horizontal: 'left',
+            }}
+            transformOrigin={{
+              vertical: 'top',
+              horizontal: 'left',
+            }}
+          >
+            <MenuItem onClick={handleMobileMenuClose} component="a" href="/">Home</MenuItem>
+            <MenuItem onClick={handleMobileMenuClose} component="a" href="/shop">Shop</MenuItem>
+            <MenuItem onClick={handleMobileMenuClose} component="a" href="/product">Product</MenuItem>
+            <MenuItem onClick={handleMobileMenuClose} component="a" href="/pages">Pages</MenuItem>
+            <MenuItem onClick={handleMobileMenuClose} component="a" href="/pages">About Us</MenuItem>
+            <Divider />
+            <MenuItem onClick={handleCategoryMenuClick}>All Categories</MenuItem>
+            <Divider />
+            <MenuItem onClick={handleMobileMenuClose}>
+              <LocalOfferOutlinedIcon fontSize="small" style={{ marginRight: '8px' }} />
+              DEALS
+            </MenuItem>
           </Menu>
         </div>
       </header>
@@ -115,6 +153,7 @@ const Header = () => {
           <a href="/shop">Shop</a>
           <a href="/product">Product</a>
           <a href="/pages">Pages</a>
+          <a href="/pages">About Us</a>
         </div>
         <div className="sub-header-right">
           <button className="deals-button">
