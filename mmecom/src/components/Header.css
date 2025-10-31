@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 0.2rem 2rem;
   background-color: #fff;
   border-bottom: 1px solid #e0e0e0;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -90,7 +90,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.5rem 5%;
+  padding: 0.5rem 7%;
   background-color: rgb(255, 255, 255);
   color: black;
   font-weight: bold;
@@ -134,7 +134,7 @@
   cursor: pointer;
   /* opacity: 0.7; */
   transition: opacity 0.3s;
-  margin-left: 70px;
+  margin-left: 6px;
 }
 
 .deals-button {

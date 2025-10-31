@@ -1,0 +1,87 @@
+.welcome-banner-container {
+  padding: 20px 0;
+  background-color: #f8f9fa;
+}
+
+.welcome-banner {
+  max-width: 1600px;
+  height: 138px;
+  margin: 0 auto;
+  background-image: url('/assets/banner/banner.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  position: relative;
+  /* border-radius: 8px; */
+  overflow: hidden;
+}
+
+.welcome-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4); /* Dark overlay for text readability */
+}
+
+.banner-content {
+  position: relative; /* To be on top of the overlay */
+  z-index: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-content h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.banner-offer-details {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.banner-content p {
+  font-size: 1.1rem;
+  margin-bottom: 0;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7);
+}
+
+.coupon-code {
+  display: inline-block;
+  background-color: #fff;
+  color: #333;
+  padding: 8px 25px;
+  border: 2px dashed #008080;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .welcome-banner {
+    height: 300px;
+  }
+
+  .banner-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .banner-content p {
+    font-size: 1.2rem;
+  }
+}

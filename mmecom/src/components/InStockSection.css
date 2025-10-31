@@ -1,0 +1,91 @@
+.in-stock-section {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 2rem; /* This was 2rem 6rem, which is invalid. Correcting to 2rem. */
+    padding: 2rem 6rem;
+    margin: 2rem 0;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+}
+
+.products-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.in-stock-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    color: rgb(0, 75, 126);
+}
+
+.in-stock-header h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.shipping-button {
+    background-color: #03b6c3;
+    color: rgb(255 255 255);
+    border: 1px solid #007d86;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.delivery-svg {
+    width: 100%;
+    height: auto;
+}
+
+.product-cards-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+/* Responsive Design */
+
+/* Tablet View */
+@media (max-width: 1200px) {
+    .in-stock-section {
+        grid-template-columns: 1fr;
+        padding: 2rem 3rem;
+    }
+    .product-cards-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        justify-items: center; /* Center cards in the grid */
+    }
+    .delivery-banner {
+        display: none;
+    }
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+    .in-stock-section {
+        grid-template-columns: 1fr; /* Stack sections vertically */
+        padding: 1.5rem 1rem;
+    }
+
+    .in-stock-header {
+        flex-direction: column; /* Stack header items */
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .product-cards-container {
+        grid-template-columns: 1fr; /* 1 card per row on mobile */
+        gap: 1rem;
+        justify-items: center; /* Center card in the grid */
+    }
+
+    .delivery-banner {
+        display: none; /* Hide the banner on small screens to save space */
+    }
+}

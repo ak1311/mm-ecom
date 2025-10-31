@@ -1,0 +1,128 @@
+.footer {
+  color: #444444;
+  width: 100%;
+}
+
+.upper-footer {
+  background-color: #008080;
+  padding: 10px;
+}
+
+.footer-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  max-width: 1250px; /* Adjusted to match carousel max-width */
+  margin: 0 auto;
+  padding: 0 20px; /* Added horizontal padding */
+}
+
+.footer-column-one {
+  background-color: #b2d8d8;
+  padding: 10px 30px;
+  border-radius: 8px;
+}
+
+.footer-logo {
+  height: 120px;
+  margin-bottom: 5px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer-description {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.follow-us-header {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons a {
+  color: #444444;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #005959; /* A darker shade for hover */
+}
+
+.lower-footer {
+  background-color: #116464;
+  padding: 20px;
+}
+
+.lower-footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1250px; /* Adjusted to match carousel max-width */
+  margin: 0 auto;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 0 20px; /* Added horizontal padding */
+}
+
+.copyright-text {
+  font-size: 0.9rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 25px;
+}
+
+.footer-links a {
+  color: #444444;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: text-decoration 0.3s ease;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive adjustments for tablets */
+@media (max-width: 992px) {
+  .footer-columns {
+    grid-template-columns: 1fr 1fr; /* Switch to 2 columns on tablets */
+  }
+
+  .footer-column-one {
+    grid-column: span 2; /* Make the first column span both new columns */
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .upper-footer {
+    padding: 20px;
+  }
+
+  .footer-columns {
+    grid-template-columns: 1fr;
+    padding: 0;
+  }
+
+  .footer-column-one {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .lower-footer-content {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+}
