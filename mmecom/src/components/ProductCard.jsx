@@ -14,7 +14,7 @@ export default function ProductCard({
     price: 59.99,
     description:
       "A short product description to buyers.",
-    image: "assets/products/product-2.jpg", // replace with your image
+    image: "assets/products/product-1.jpg", // replace with your image
     sizes: ["400gm", "800gm"],
   };
 

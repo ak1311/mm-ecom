@@ -154,7 +154,7 @@
   padding: 12px 4px;
   box-sizing: border-box; /* This prevents the button from overflowing the card */
   border-radius: 25px;
-  background: #ffffff;
+  background: rgb(255 255 255 / 50%);
   color: #0096aa;
   font-weight: 700;
   border: none;
@@ -166,7 +166,7 @@
 }
 
 .add-btn:hover {
-  background: #e4e4e4;
+  background: #ffffff;
 }
 
 .add-btn.quantity-controls {

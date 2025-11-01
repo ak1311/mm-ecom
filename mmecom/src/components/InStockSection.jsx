@@ -23,6 +23,8 @@ const InStockSection = () => {
       </div>
       <div className="delivery-banner">
         <img src="/assets/fast-delivery.svg" alt="Fast Delivery Banner" className="delivery-svg" />
+        <img src="/assets/delivery-1.svg" alt="Fast Delivery Banner" className="delivery-svg" />
+        {/* <img src="/assets/delivery-2.svg" alt="Fast Delivery Banner" className="delivery-svg" /> */}
       </div>
     </section>
   );
