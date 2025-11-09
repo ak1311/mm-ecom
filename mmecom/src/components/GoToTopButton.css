@@ -1,0 +1,8 @@
+.go-to-top-button {
+  position: fixed !important;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: #006666 !important;
+  color: white !important;
+  z-index: 1000;
+}

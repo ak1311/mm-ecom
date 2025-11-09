@@ -14,17 +14,28 @@ import BreakfastDiningOutlinedIcon from '@mui/icons-material/BreakfastDiningOutl
 import AcUnitOutlinedIcon from '@mui/icons-material/AcUnitOutlined';
 import MenuItem from '@mui/material/MenuItem';
 import Divider from '@mui/material/Divider';
+import Modal from '@mui/material/Modal';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import TextField from '@mui/material/TextField';
+import IconButton from '@mui/material/IconButton';
+import CloseIcon from '@mui/icons-material/Close';
+import Button from '@mui/material/Button';
+import GoToTopButton from './GoToTopButton';
 
 const Header = () => {
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
-
   const [categoryMenuAnchorEl, setCategoryMenuAnchorEl] = useState(null);
   const categoryMenuOpen = Boolean(categoryMenuAnchorEl);
 
   const [mobileMenuAnchorEl, setMobileMenuAnchorEl] = useState(null);
   const mobileMenuOpen = Boolean(mobileMenuAnchorEl);
 
+  const [loginModalOpen, setLoginModalOpen] = useState(false);
+
+  const handleLoginModalOpen = () => setLoginModalOpen(true);
+  const handleLoginModalClose = () => setLoginModalOpen(false);
   const handleCategoryMenuClick = (event) => {
     setCategoryMenuAnchorEl(event.currentTarget);
   };
@@ -35,6 +46,11 @@ const Header = () => {
 
   const handleClose = () => {
     setAnchorEl(null);
+  };
+
+  const handleLoginClick = () => {
+    handleClose();
+    handleLoginModalOpen();
   };
 
   const handleCategoryMenuClose = () => {
@@ -86,7 +102,7 @@ const Header = () => {
               'aria-labelledby': 'basic-button',
             }}
           >
-            <MenuItem onClick={handleClose}>Login</MenuItem>
+            <MenuItem onClick={handleLoginClick}>Login</MenuItem>
             <MenuItem onClick={handleClose}>Register</MenuItem>
           </Menu>
           <Menu
@@ -162,6 +178,56 @@ const Header = () => {
           </button>
         </div>
       </div>
+      <Modal
+        open={loginModalOpen}
+        onClose={handleLoginModalClose}
+        aria-labelledby="login-modal-title"
+        aria-describedby="login-modal-description"
+        className="modal-backdrop"
+      >
+        <Box className="modal-box">
+          <IconButton
+            aria-label="close"
+            onClick={handleLoginModalClose}
+            className="modal-close-button"
+          >
+            <CloseIcon />
+          </IconButton>
+          <Typography id="login-modal-title" variant="h6" component="h2" className="modal-header">
+            LOGIN
+          </Typography>
+          <TextField
+            label="Phone Number"
+            variant="outlined"
+            fullWidth
+            margin="normal"
+            type="tel"
+            inputProps={{ maxLength: 10 }}
+            onInput={(e) => {
+              e.target.value = e.target.value.replace(/[^0-9]/g, '');
+            }}
+          />
+          <TextField
+            label="OTP"
+            variant="outlined"
+            fullWidth
+            margin="normal"
+            inputProps={{ maxLength: 6, type: 'tel' }}
+            onInput={(e) => {
+              e.target.value = e.target.value.replace(/[^0-9]/g, '');
+            }}
+          />
+          <Button
+            variant="contained"
+            color="primary"
+            fullWidth
+            className="submit-button"
+          >
+            Submit
+          </Button>
+        </Box>
+      </Modal>
+      <GoToTopButton />
     </>
   );
 };
