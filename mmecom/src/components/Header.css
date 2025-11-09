@@ -240,8 +240,8 @@
   left: 50%;
   transform: translate(-50%, -50%);
   width: 250px;
-  background-color: rgb(255 255 255 / 30%); 
-  border: 1px solid white;;
+  background-color: rgba(255, 255, 255, 0.4); 
+  border: 2px solid #006666;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   padding: 2rem;
   border-radius: 10px;
@@ -255,14 +255,14 @@
   text-align: center;
   margin-bottom: 1rem;
   font-weight: bold;
-  color: #006666; /* Changed header color to teal */
+  color: #045555; /* Changed header color to teal */
 }
 
 .modal-close-button {
   position: absolute !important;
   top: 8px;
   right: 8px;
-  color: #555 !important;
+  color: #313131 !important;
 }
 
 .modal-close-button:hover {
@@ -277,4 +277,29 @@
 
 .submit-button:hover {
   background-color: #004d4d !important;
+}
+
+.cart-badge .MuiBadge-badge {
+  background-color: red;
+}
+
+/* Login Textfield Styles */
+.login-textfield .MuiOutlinedInput-input {
+  color: white; /* Input text color */
+}
+
+.login-textfield .MuiInputLabel-root {
+  color: white; /* Label color */
+}
+
+.login-textfield .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
+  border-color: white; /* Border color */
+}
+
+.login-textfield .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+  border-color: white; /* Border color on hover */
+}
+
+.login-textfield .MuiInputLabel-root.Mui-focused {
+  color: white; /* Label color when focused */
 }

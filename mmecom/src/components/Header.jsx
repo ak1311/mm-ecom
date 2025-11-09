@@ -22,6 +22,7 @@ import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 import Button from '@mui/material/Button';
 import GoToTopButton from './GoToTopButton';
+import Badge from '@mui/material/Badge';
 
 const Header = () => {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -33,6 +34,7 @@ const Header = () => {
   const mobileMenuOpen = Boolean(mobileMenuAnchorEl);
 
   const [loginModalOpen, setLoginModalOpen] = useState(false);
+  const [cartCount, setCartCount] = useState(0);
 
   const handleLoginModalOpen = () => setLoginModalOpen(true);
   const handleLoginModalClose = () => setLoginModalOpen(false);
@@ -88,7 +90,9 @@ const Header = () => {
           </div>
           <div className="separator"></div>
           <div className="icon-placeholder">
-            <ShoppingCartOutlinedIcon />
+            <Badge badgeContent={cartCount} className="cart-badge" showZero>
+              <ShoppingCartOutlinedIcon />
+            </Badge>
           </div>
           <div className="separator"></div>
           <div className="icon-placeholder" onClick={handleClick}>
@@ -197,25 +201,20 @@ const Header = () => {
             LOGIN
           </Typography>
           <TextField
-            label="Phone Number"
+            label="Email"
             variant="outlined"
             fullWidth
             margin="normal"
-            type="tel"
-            inputProps={{ maxLength: 10 }}
-            onInput={(e) => {
-              e.target.value = e.target.value.replace(/[^0-9]/g, '');
-            }}
+            type="email"
+            className="login-textfield"
           />
           <TextField
-            label="OTP"
+            label="Password"
             variant="outlined"
             fullWidth
             margin="normal"
-            inputProps={{ maxLength: 6, type: 'tel' }}
-            onInput={(e) => {
-              e.target.value = e.target.value.replace(/[^0-9]/g, '');
-            }}
+            type="password"
+            className="login-textfield"
           />
           <Button
             variant="contained"
