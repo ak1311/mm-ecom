@@ -7,7 +7,7 @@ import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined
 import MenuIcon from '@mui/icons-material/Menu';
 import Menu from '@mui/material/Menu';
 import LocalOfferOutlinedIcon from '@mui/icons-material/LocalOfferOutlined';
-// import EcoOutlinedIcon from '@mui/icons-material/EcoOutlined';
+import SpaOutlinedIcon from '@mui/icons-material/SpaOutlined';
 import EmojiFoodBeverageOutlinedIcon from '@mui/icons-material/EmojiFoodBeverageOutlined';
 import SetMealOutlinedIcon from '@mui/icons-material/SetMealOutlined';
 import BreakfastDiningOutlinedIcon from '@mui/icons-material/BreakfastDiningOutlined';
@@ -23,6 +23,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import Button from '@mui/material/Button';
 import GoToTopButton from './GoToTopButton';
 import Badge from '@mui/material/Badge';
+import Fade from '@mui/material/Fade';
 
 const Header = () => {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -150,22 +151,44 @@ const Header = () => {
             MenuListProps={{
               'aria-labelledby': 'category-button',
             }}
+            anchorOrigin={{
+              vertical: 'bottom',
+              horizontal: 'left',
+            }}
+            transformOrigin={{
+              vertical: 'top',
+              horizontal: 'left',
+            }}
+            PaperProps={{
+              className: 'category-menu-paper',
+            }}
+            TransitionComponent={Fade}
           >
             <MenuItem onClick={handleCategoryMenuClose} className="category-menu-item">
-              {/* <EcoOutlinedIcon fontSize="small" />  */}Vegetables & Fruit
+              <SpaOutlinedIcon fontSize="small" /> Thekua
             </MenuItem>
             <MenuItem onClick={handleCategoryMenuClose} className="category-menu-item">
-              <EmojiFoodBeverageOutlinedIcon fontSize="small" /> Beverages
+              <EmojiFoodBeverageOutlinedIcon fontSize="small" /> Cookies
             </MenuItem>
             <MenuItem onClick={handleCategoryMenuClose} className="category-menu-item">
-              <SetMealOutlinedIcon fontSize="small" /> Meats & Seafood
+              <SetMealOutlinedIcon fontSize="small" /> Raw Spices
             </MenuItem>
             <MenuItem onClick={handleCategoryMenuClose} className="category-menu-item">
-              <BreakfastDiningOutlinedIcon fontSize="small" /> Breakfast & Dairy
+              <BreakfastDiningOutlinedIcon fontSize="small" /> Gujiya
             </MenuItem>
             <MenuItem onClick={handleCategoryMenuClose} className="category-menu-item">
-              <AcUnitOutlinedIcon fontSize="small" /> Frozen Foods
+              <AcUnitOutlinedIcon fontSize="small" /> Pickle
             </MenuItem>
+            <MenuItem onClick={handleCategoryMenuClose} className="category-menu-item">
+              <AcUnitOutlinedIcon fontSize="small" /> Dry Fruits
+            </MenuItem>
+            <MenuItem onClick={handleCategoryMenuClose} className="category-menu-item">
+              <AcUnitOutlinedIcon fontSize="small" /> Til Sweets
+            </MenuItem>
+            <MenuItem onClick={handleCategoryMenuClose} className="category-menu-item">
+              <AcUnitOutlinedIcon fontSize="small" /> Masala Tea Bag
+            </MenuItem>
+            
           </Menu>
         </div>
         <div className="sub-header-center">
