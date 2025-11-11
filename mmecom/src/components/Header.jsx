@@ -7,8 +7,8 @@ import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined
 import MenuIcon from '@mui/icons-material/Menu';
 import Menu from '@mui/material/Menu';
 import LocalOfferOutlinedIcon from '@mui/icons-material/LocalOfferOutlined';
-import SpaOutlinedIcon from '@mui/icons-material/SpaOutlined';
 import EmojiFoodBeverageOutlinedIcon from '@mui/icons-material/EmojiFoodBeverageOutlined';
+import BlurCircularOutlinedIcon from '@mui/icons-material/BlurCircularOutlined';
 import SetMealOutlinedIcon from '@mui/icons-material/SetMealOutlined';
 import BreakfastDiningOutlinedIcon from '@mui/icons-material/BreakfastDiningOutlined';
 import AcUnitOutlinedIcon from '@mui/icons-material/AcUnitOutlined';
@@ -165,7 +165,7 @@ const Header = () => {
             TransitionComponent={Fade}
           >
             <MenuItem onClick={handleCategoryMenuClose} className="category-menu-item">
-              <SpaOutlinedIcon fontSize="small" /> Thekua
+              <BlurCircularOutlinedIcon fontSize="small" /> Thekua
             </MenuItem>
             <MenuItem onClick={handleCategoryMenuClose} className="category-menu-item">
               <EmojiFoodBeverageOutlinedIcon fontSize="small" /> Cookies
