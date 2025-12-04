@@ -3,16 +3,19 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 80vh;
   text-align: center;
   font-family: 'Merriweather', serif;
   padding: 1rem;
+  background-color: white;
+  min-height: calc(100vh - 200px); /* Adjust based on header/footer height */
+  box-sizing: border-box;
 }
 
 .not-found-image {
   width: 100%;
   max-width: 500px;
   margin-bottom: 2rem;
+  background-color: white;
 }
 
 .not-found-container h1 {

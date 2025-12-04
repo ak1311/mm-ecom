@@ -3,9 +3,9 @@
     grid-template-columns: 3fr 1fr;
     gap: 2rem; /* This was 2rem 6rem, which is invalid. Correcting to 2rem. */
     padding: 2rem 6rem;
-    margin: 2rem 0;
+    /* margin: 2rem 0; */
     background-color: #f4f4f4;
-    border-radius: 8px;
+    /* border-radius: 8px; */
 }
 
 .products-section {
