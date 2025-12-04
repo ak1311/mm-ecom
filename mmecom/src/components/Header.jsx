@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Header.css'; // We'll create this for styling
+import { Link } from 'react-router-dom';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
@@ -73,7 +74,9 @@ const Header = () => {
       <header className="header">
         <div className="header-left">
           <MenuIcon className="hamburger-menu" onClick={handleMobileMenuOpen} />
-          <img src="/assets/logo.png" alt="Logo" className="logo" />
+          <Link to="/">
+            <img src="/assets/logo.png" alt="Logo" className="logo" />
+          </Link>
         </div>
         <div className="header-center">
           <div className="search-container">
@@ -123,11 +126,11 @@ const Header = () => {
               horizontal: 'left',
             }}
           >
-            <MenuItem onClick={handleMobileMenuClose} component="a" href="/">Home</MenuItem>
-            <MenuItem onClick={handleMobileMenuClose} component="a" href="/shop">Shop</MenuItem>
-            <MenuItem onClick={handleMobileMenuClose} component="a" href="/product">Product</MenuItem>
-            <MenuItem onClick={handleMobileMenuClose} component="a" href="/pages">Pages</MenuItem>
-            <MenuItem onClick={handleMobileMenuClose} component="a" href="/pages">About Us</MenuItem>
+            <MenuItem onClick={handleMobileMenuClose} component={Link} to="/">Home</MenuItem>
+            <MenuItem onClick={handleMobileMenuClose} component={Link} to="/404">Shop</MenuItem>
+            <MenuItem onClick={handleMobileMenuClose} component={Link} to="/404">Product</MenuItem>
+            <MenuItem onClick={handleMobileMenuClose} component={Link} to="/404">Pages</MenuItem>
+            <MenuItem onClick={handleMobileMenuClose} component={Link} to="/404">About Us</MenuItem>
             <Divider />
             <MenuItem onClick={handleCategoryMenuClick}>All Categories</MenuItem>
             <Divider />
@@ -192,11 +195,11 @@ const Header = () => {
           </Menu>
         </div>
         <div className="sub-header-center">
-          <a href="/">Home</a>
-          <a href="/shop">Shop</a>
-          <a href="/product">Product</a>
-          <a href="/pages">Pages</a>
-          <a href="/pages">About Us</a>
+          <Link to="/">Home</Link>
+          <Link to="/404">Shop</Link>
+          <Link to="/404">Product</Link>
+          <Link to="/404">Pages</Link>
+          <Link to="/404">About Us</Link>
         </div>
         <div className="sub-header-right">
           <button className="deals-button">

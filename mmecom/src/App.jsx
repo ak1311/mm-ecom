@@ -1,22 +1,28 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
-import SecondaryCarousel from './components/SecondaryCarousel';
 import Footer from './components/Footer';
-import WelcomeBanner from './components/WelcomeBanner'; // This was already here
-import InStockSection from './components/InStockSection';
+import HomePage from './pages/HomePage';
+import NotFoundPage from './pages/NotFoundPage';
 import './App.css';
 
 function App() {
   return (
-    <div className="app">
+    <Router>
       <Header />
       <main>
-        <SecondaryCarousel />
-        <WelcomeBanner /> 
-        <InStockSection />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          
+          {/* Route for the 404 page */}
+          <Route path="/404" element={<NotFoundPage />} />
+
+          {/* This is a catch-all route for any other path */}
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
       </main>
       <Footer />
-    </div>
+    </Router>
   );
 }
 
