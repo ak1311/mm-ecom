@@ -7,7 +7,9 @@
   max-width: 1600px;
   height: 138px;
   margin: 0 auto;
-  background-image: url('/assets/banner/banner.jpg');
+  /* background-image: url('/assets/banner/banner.jpg'); */
+  background: #0d0101;
+  background: linear-gradient(309deg, rgba(13, 1, 1, 1) 0%, rgba(26, 167, 236, 1) 100%);
   background-size: cover;
   background-position: center;
   display: flex;
@@ -55,7 +57,7 @@
 
 .banner-content p {
   font-size: 1.1rem;
-  margin-bottom: 0;
+  margin-bottom: 20px;
   text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7);
 }
 

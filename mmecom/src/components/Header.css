@@ -3,8 +3,11 @@
   justify-content: space-between;
   align-items: center;
   padding: 0.2rem 2rem;
-  background-color: #fff;
+  /* background-color: #fff; */
   border-bottom: 1px solid #e0e0e0;
+  padding: 0.5rem 2rem;
+  /* A subtle gradient for a modern look */
+  background: linear-gradient(to bottom, #1aa7ec, #f9f9f9);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -17,6 +20,7 @@
 .logo {
   height: 70px;
   width: auto;
+  mix-blend-mode: multiply;
 }
 
 .header-center {
@@ -77,7 +81,7 @@
 }
 
 .icon-placeholder:hover {
-  color: #006666;
+  color: #7d99aa;
 }
 
 .separator {
@@ -92,10 +96,13 @@
   align-items: center;
   justify-content: space-between;
   padding: 0.5rem 7%;
-  background-color: rgb(255, 255, 255);
+  background-color: #ffffff;
+  padding: 0.75rem 7%;
+  /* background-color: #f8f5ef; */
   color: black;
   font-weight: bold;
   border-color: 1px solid #000000;
+  border-bottom: 1px solid #e0e0e0;
 }
 
 .sub-header-left {
@@ -126,7 +133,7 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  background-color: #03b6c3; 
+  background-color: #1AA7EC; 
   border: 1px solid #ffffff; 
   color: white;
   padding: 0.75rem 2rem;
@@ -144,9 +151,9 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  background-color: #03b6c3;
+  background-color: #1AA7EC;
   border: 1px solid #ffffff;
-  color: rgb(255 203 49);
+  color: #FFCC66;
   padding: 0.9rem 2rem;
   border-radius: 5px;
   font-weight: bold;
@@ -158,11 +165,31 @@
 
 .category-menu-item {
   display: flex;
+  margin: 0 16px;
+  border-radius: 4px;
   gap: 0.75rem;
+}
+
+.MuiMenu-list .category-menu-item:hover {
+  width: 90%;
+  border-radius: 5px;
+  margin-left: 5%;
+  /* width: 90%;
+  border-radius: 5px;
+  margin-left: 5%; */
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+}
+
+.MuiMenu-list .category-menu-item:hover .MuiSvgIcon-root {
+  color: white;
 }
 
 .category-menu-paper {
   width: 215px;
+  background-color: rgba(255, 255, 255, 0.6) !important; /* White background with 75% opacity */
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px); /* For Safari */
 }
 
 .sub-menu-icon {
@@ -171,7 +198,7 @@
 }
 
 .hamburger-menu {
-  display: none;
+  display: none !important;
   cursor: pointer;
   margin-right: 1rem;
 }
@@ -192,7 +219,7 @@
   }
 
   .hamburger-menu {
-    display: block;
+    display: block !important;
     position: absolute;
     left: 10px;
     top: 50%;
@@ -248,7 +275,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   width: 250px;
-  background-color: rgba(255, 255, 255, 0.5); 
+  background-color: rgba(51, 90, 118, 0.4); 
   border: 1px solid #ffffff;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   padding: 2rem;
@@ -262,17 +289,17 @@
 .modal-header {
   text-align: center;
   margin-bottom: 1.75rem;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 1.5rem!important;
   line-height: 4rem !important;
-  color: #045555; /* Changed header color to teal */
+  color: #ffffff; /* Changed header color to teal */
 }
 
 .modal-close-button {
   position: absolute !important;
   top: 8px;
   right: 8px;
-  color: #313131 !important;
+  color: #ffffff !important;
 }
 
 .modal-close-button:hover {
@@ -290,7 +317,7 @@
 }
 
 .cart-badge .MuiBadge-badge {
-  background-color: #03b6c3;
+  background-color: #FFCC66;
 }
 
 /* Login Textfield Styles */
@@ -312,4 +339,9 @@
 
 .login-textfield .MuiInputLabel-root.Mui-focused {
   color: white; /* Label color when focused */
+}
+
+.remember-me-label {
+  color: white;
+  align-self: flex-start; /* Align checkbox to the left */
 }

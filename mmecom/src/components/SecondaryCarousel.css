@@ -9,10 +9,10 @@
 .secondary-carousel-container {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 4px;
   width: 100%;
-  max-width: 1250px;
-  margin: 0 auto;
+  max-width: 1278px;
+  margin: 0 0 0 22px;
   position: relative; /* left: 30px was causing layout issues on smaller screens */
 }
 

@@ -18,7 +18,7 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 1.5rem;
-    color: rgb(0, 75, 126);
+    color: #464646;
 }
 
 .in-stock-header h2 {
@@ -28,9 +28,9 @@
 }
 
 .shipping-button {
-    background-color: #03b6c3;
-    color: rgb(255 255 255);
-    border: 1px solid #007d86;
+    background-color: #464646;
+    color: rgb(35, 173, 204);
+    border: 1px solid #464646;;
     padding: 0.5rem 1rem;
     border-radius: 6px;
     cursor: pointer;

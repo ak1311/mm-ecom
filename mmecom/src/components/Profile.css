@@ -1,0 +1,52 @@
+.profile-page {
+  background-color: #464646;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-main-container {
+  flex: 1;
+  display: grid;
+  /* 1fr (left) + 2fr + 5fr + 2fr + 1fr (right) */
+  grid-template-columns: 1fr 2fr 5fr 2fr 1fr;
+  gap: 8px;
+  padding: 8px 0;
+  box-sizing: border-box;
+}
+
+.profile-spacer {
+  /* Empty spacer columns */
+}
+
+/* Column 1: Span 2 */
+.profile-col-first {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.col-first-row-square {
+  width: 100%;
+  aspect-ratio: 1 / 1; /* Square shape */
+  background-color: #fff9f3;
+  border-radius: 4px;
+}
+
+.col-first-row-rest {
+  flex: 1;
+  background-color: #fff9f3;
+  border-radius: 4px;
+}
+
+/* Column 2: Span 5 */
+.profile-col-second {
+  background-color: #fff9f3;
+  border-radius: 4px;
+}
+
+/* Column 3: Span 2 */
+.profile-col-third {
+  background-color: #fff9f3;
+  border-radius: 4px;
+}

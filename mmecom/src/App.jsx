@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import NotFoundPage from './pages/NotFoundPage';
+import Profile from './components/Profile';
 import Loader from './components/Loader'; // The initial spinner
 import SkeletonLoader from './components/SkeletonLoader'; // The new skeleton
 import './App.css';
@@ -42,6 +43,7 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/profile" element={<Profile />} />
           
           {/* Route for the 404 page */}
           <Route path="/404" element={<NotFoundPage />} />

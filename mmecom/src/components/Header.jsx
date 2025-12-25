@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Header.css'; // We'll create this for styling
+import './HeaderCustomDropdown.css';
 import { Link } from 'react-router-dom';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
@@ -13,6 +14,9 @@ import BlurCircularOutlinedIcon from '@mui/icons-material/BlurCircularOutlined';
 import SetMealOutlinedIcon from '@mui/icons-material/SetMealOutlined';
 import BreakfastDiningOutlinedIcon from '@mui/icons-material/BreakfastDiningOutlined';
 import AcUnitOutlinedIcon from '@mui/icons-material/AcUnitOutlined';
+import SpaOutlinedIcon from '@mui/icons-material/SpaOutlined';
+import GrainOutlinedIcon from '@mui/icons-material/GrainOutlined';
+import LocalCafeOutlinedIcon from '@mui/icons-material/LocalCafeOutlined';
 import MenuItem from '@mui/material/MenuItem';
 import Divider from '@mui/material/Divider';
 import Modal from '@mui/material/Modal';
@@ -24,24 +28,26 @@ import CloseIcon from '@mui/icons-material/Close';
 import Button from '@mui/material/Button';
 import GoToTopButton from './GoToTopButton';
 import Badge from '@mui/material/Badge';
-import Fade from '@mui/material/Fade';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Checkbox from '@mui/material/Checkbox';
 
 const Header = () => {
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
-  const [categoryMenuAnchorEl, setCategoryMenuAnchorEl] = useState(null);
-  const categoryMenuOpen = Boolean(categoryMenuAnchorEl);
+  const [showCategoryMenu, setShowCategoryMenu] = useState(false);
 
   const [mobileMenuAnchorEl, setMobileMenuAnchorEl] = useState(null);
   const mobileMenuOpen = Boolean(mobileMenuAnchorEl);
 
   const [loginModalOpen, setLoginModalOpen] = useState(false);
   const [cartCount, setCartCount] = useState(0);
+  const [rememberMe, setRememberMe] = useState(false);
+
 
   const handleLoginModalOpen = () => setLoginModalOpen(true);
   const handleLoginModalClose = () => setLoginModalOpen(false);
-  const handleCategoryMenuClick = (event) => {
-    setCategoryMenuAnchorEl(event.currentTarget);
+  const handleCategoryMenuClick = () => {
+    setShowCategoryMenu((prev) => !prev);
   };
 
   const handleClick = (event) => {
@@ -58,7 +64,7 @@ const Header = () => {
   };
 
   const handleCategoryMenuClose = () => {
-    setCategoryMenuAnchorEl(null);
+    setShowCategoryMenu(false);
   };
 
   const handleMobileMenuOpen = (event) => {
@@ -67,6 +73,10 @@ const Header = () => {
 
   const handleMobileMenuClose = () => {
     setMobileMenuAnchorEl(null);
+  };
+
+  const handleRememberMeChange = (event) => {
+    setRememberMe(event.target.checked);
   };
 
   return (
@@ -110,6 +120,7 @@ const Header = () => {
               'aria-labelledby': 'basic-button',
             }}
           >
+            <MenuItem onClick={handleClose} component={Link} to="/profile">Profile</MenuItem>
             <MenuItem onClick={handleLoginClick}>Login</MenuItem>
             <MenuItem onClick={handleClose}>Register</MenuItem>
           </Menu>
@@ -131,7 +142,7 @@ const Header = () => {
             <MenuItem onClick={handleMobileMenuClose} component={Link} to="/404">Product</MenuItem>
             <MenuItem onClick={handleMobileMenuClose} component={Link} to="/404">Pages</MenuItem>
             <MenuItem onClick={handleMobileMenuClose} component={Link} to="/404">About Us</MenuItem>
-            <Divider />
+            <Divider /> 
             <MenuItem onClick={handleCategoryMenuClick}>All Categories</MenuItem>
             <Divider />
             <MenuItem onClick={handleMobileMenuClose}>
@@ -147,52 +158,51 @@ const Header = () => {
             <MenuIcon className="sub-menu-icon" />
             <span>All Categories</span>
           </button>
-          <Menu
-            anchorEl={categoryMenuAnchorEl}
-            open={categoryMenuOpen}
-            onClose={handleCategoryMenuClose}
-            MenuListProps={{
-              'aria-labelledby': 'category-button',
-            }}
-            anchorOrigin={{
-              vertical: 'bottom',
-              horizontal: 'left',
-            }}
-            transformOrigin={{
-              vertical: 'top',
-              horizontal: 'left',
-            }}
-            PaperProps={{
-              className: 'category-menu-paper',
-            }}
-            TransitionComponent={Fade}
-          >
-            <MenuItem onClick={handleCategoryMenuClose} className="category-menu-item">
-              <BlurCircularOutlinedIcon fontSize="small" /> Thekua
-            </MenuItem>
-            <MenuItem onClick={handleCategoryMenuClose} className="category-menu-item">
-              <EmojiFoodBeverageOutlinedIcon fontSize="small" /> Cookies
-            </MenuItem>
-            <MenuItem onClick={handleCategoryMenuClose} className="category-menu-item">
-              <SetMealOutlinedIcon fontSize="small" /> Raw Spices
-            </MenuItem>
-            <MenuItem onClick={handleCategoryMenuClose} className="category-menu-item">
-              <BreakfastDiningOutlinedIcon fontSize="small" /> Gujiya
-            </MenuItem>
-            <MenuItem onClick={handleCategoryMenuClose} className="category-menu-item">
-              <AcUnitOutlinedIcon fontSize="small" /> Pickle
-            </MenuItem>
-            <MenuItem onClick={handleCategoryMenuClose} className="category-menu-item">
-              <AcUnitOutlinedIcon fontSize="small" /> Dry Fruits
-            </MenuItem>
-            <MenuItem onClick={handleCategoryMenuClose} className="category-menu-item">
-              <AcUnitOutlinedIcon fontSize="small" /> Til Sweets
-            </MenuItem>
-            <MenuItem onClick={handleCategoryMenuClose} className="category-menu-item">
-              <AcUnitOutlinedIcon fontSize="small" /> Masala Tea Bag
-            </MenuItem>
-            
-          </Menu>
+          {showCategoryMenu && (
+            <>
+              <div className="category-backdrop" onClick={handleCategoryMenuClose} />
+              <div className="custom-category-menu">
+                <div className="category-item" onClick={handleCategoryMenuClose}>
+                  <BlurCircularOutlinedIcon fontSize="small" /> Thekua
+                </div>
+                <div className="category-divider" />
+
+                <div className="category-item" onClick={handleCategoryMenuClose}>
+                  <EmojiFoodBeverageOutlinedIcon fontSize="small" /> Cookies
+                </div>
+                <div className="category-divider" />
+
+                <div className="category-item" onClick={handleCategoryMenuClose}>
+                  <SetMealOutlinedIcon fontSize="small" /> Raw Spices
+                </div>
+                <div className="category-divider" />
+
+                <div className="category-item" onClick={handleCategoryMenuClose}>
+                  <BreakfastDiningOutlinedIcon fontSize="small" /> Gujiya
+                </div>
+                <div className="category-divider" />
+
+                <div className="category-item" onClick={handleCategoryMenuClose}>
+                  <SpaOutlinedIcon fontSize="small" /> Pickle
+                </div>
+                <div className="category-divider" />
+
+                <div className="category-item" onClick={handleCategoryMenuClose}>
+                  <GrainOutlinedIcon fontSize="small" /> Dry Fruits
+                </div>
+                <div className="category-divider" />
+
+                <div className="category-item" onClick={handleCategoryMenuClose}>
+                  <GrainOutlinedIcon fontSize="small" /> Til Sweets
+                </div>
+                <div className="category-divider" />
+
+                <div className="category-item" onClick={handleCategoryMenuClose}>
+                  <LocalCafeOutlinedIcon fontSize="small" /> Masala Tea Bag
+                </div>
+              </div>
+            </>
+          )}
         </div>
         <div className="sub-header-center">
           <Link to="/">Home</Link>
@@ -208,6 +218,7 @@ const Header = () => {
           </button>
         </div>
       </div>
+      
       <Modal
         open={loginModalOpen}
         onClose={handleLoginModalClose}
@@ -241,6 +252,20 @@ const Header = () => {
             margin="normal"
             type="password"
             className="login-textfield"
+          />
+          <FormControlLabel
+            control={
+              <Checkbox
+                checked={rememberMe}
+                onChange={handleRememberMeChange}
+                name="rememberMe"
+                sx={{
+                  color: 'white', '&.Mui-checked': { color: '#03b6c3' },
+                }}
+              />
+            }
+            label="Remember Me"
+            className="remember-me-label"
           />
           <Button
             variant="contained"

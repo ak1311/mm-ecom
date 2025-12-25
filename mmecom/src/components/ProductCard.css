@@ -1,6 +1,6 @@
 .product-card {
   width: 230px;
-  background: #a2c0c0;
+  background: #eefdfc;
   border-radius: 5px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
   border: 1px solid #a2c0c0;
@@ -143,19 +143,20 @@
 }
 
 .size-btn.selected {
-  background: #004a78;;
+  background: #1aa7ec;
   color: #fff;
-  border-color: #004a78;;
+  border-color: #1aa7ec;
 }
 
 .add-btn {
   margin-top: 12px;
-  width: 100%;
+   /* Set a fixed height */
+  height: 48px; /* Set a fixed height */
   padding: 12px 4px;
   box-sizing: border-box; /* This prevents the button from overflowing the card */
-  border-radius: 25px;
-  background: rgb(255 255 255 / 50%);
-  color: #0096aa;
+  border-radius: 5px;
+  background: #1AA7EC;
+  color: rgb(0 0 0 / 50%);
   font-weight: 700;
   border: none;
   transition: background 0.2s;
@@ -165,30 +166,35 @@
   position: relative; /* Needed for absolute positioning of the plus button */
 }
 
-.add-btn:hover {
+/* .add-btn:hover {
   background: #ffffff;
-}
+} */
 
 .add-btn.quantity-controls {
   justify-content: space-between;
-  padding: 4px;
+  padding: 4px; /* Keep horizontal padding, height will manage vertical alignment */
 }
 
 .add-btn-plus {
   position: absolute; /* Position independently of the ADD text */
-  right: 4px; /* Position on the right with some padding */
+  right: 3px; /* Position on the right with some padding */
   display: flex;
   align-items: center;
   justify-content: center;
   width: 39px;
-  height: 38px;
-  border-radius: 50%;
-  background-color: #90c3c3;
-  color: #ffffff;
+  height: 37px;
+  
+  border-radius: 5px;
+  background-color: #FFCC66;
+  color: rgb(0 0 0 / 50%);
   font-size: 24px;
   font-weight: bold;
   cursor: pointer;
   padding-bottom: 3px; /* Nudge the '+' sign up */
+}
+
+.add-btn-plus:hover {
+  background: #ffffff;
 }
 
 .add-btn.quantity-controls .add-btn-plus {
@@ -201,17 +207,23 @@
   justify-content: center;
   width: 39px;
   height: 38px;
-  border-radius: 50%;
-  background-color: #90c3c3;
-  color: #ffffff;
+  height: 40px;
+  border-radius: 5px;
+  background-color: #FFCC66;
+  color: rgb(0 0 0 / 50%);
   cursor: pointer;
 }
 
+.remove-btn-minus:hover {
+  background: #ffffff;
+}
+
 .quantity-display {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
-  color: #0096aa;
+  color: rgb(0 0 0 / 50%);
   display: flex;
   align-items: center;
   justify-content: center;
 }
+  
