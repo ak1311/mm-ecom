@@ -7,7 +7,7 @@
   border-bottom: 1px solid #e0e0e0;
   padding: 0.5rem 2rem;
   /* A subtle gradient for a modern look */
-  background: linear-gradient(to bottom, #1aa7ec, #f9f9f9);
+  background: linear-gradient(to bottom, #1aa7ec, #fff9f3);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -38,12 +38,12 @@
 .search-bar {
   width: 100%;
   padding: 0.5rem 2.5rem 0.5rem 1rem; /* Added right padding */
-  border: 1px solid #006666;
+  border: 1px solid #fff9f3;
   border-radius: 5px;
   font-size: 1rem;
   outline: none;
-  background-color: white;
-  color: #006666;
+  background-color: #fff9f3;
+  color: #1aa7ec;
   box-sizing: border-box; /* Ensures padding is included in the element's total width */
 }
 
@@ -52,13 +52,13 @@
   right: 10px; /* Move icon from the right edge */
   top: 50%;
   transform: translateY(-50%);
-  color: #006666;
+  color: #1aa7ec;
   pointer-events: none;
 }
 
 .search-bar:focus {
-  border-color: #007bff;
-  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+  border-color: #7d99aa;
+  box-shadow: 0 0 0 2px #FFCC66;
 }
 
 .header-right {
@@ -85,18 +85,21 @@
 }
 
 .separator {
-  width: 1px;
+  width: 2px;
   height: 30px;
-  background-color: #ccc;
-  margin: 0 0.5rem;
+  background-color: #464646;
+  margin: 0 0.4rem;
+  flex-shrink: 0;
 }
+
+
 
 .sub-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0.5rem 7%;
-  background-color: #ffffff;
+  background-color: #fff9f3;
   padding: 0.75rem 7%;
   /* background-color: #f8f5ef; */
   color: black;
@@ -344,4 +347,41 @@
 .remember-me-label {
   color: white;
   align-self: flex-start; /* Align checkbox to the left */
+}
+
+/* Profile Dropdown Styles */
+.profile-menu-paper {
+  background-color: rgba(255, 255, 255, 0.701) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+  border-radius: 4px !important;
+  border: 1px solid #eee !important;
+  width: 214px;
+  margin-top: 8px;
+}
+
+.profile-menu-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 16px !important;
+  cursor: pointer;
+  color: #333 !important;
+  font-size: 14px !important;
+  transition: all 0.2s;
+}
+
+.profile-menu-item:hover {
+  background-color: #3e3e3ed1 !important;
+  border-radius: 5px;
+  width: 76%;
+  margin-left: 4% !important;
+  color: #FFCC66 !important;
+}
+
+.profile-menu-item svg {
+  margin-right: 12px;
+  color: #666;
+}
+
+.profile-menu-item:hover svg {
+  color: #FFCC66;
 }

@@ -104,7 +104,6 @@ const SecondaryCarousel = () => {
               <div className="secondary-carousel-content">
                 <h2>{image.title}</h2>
                 <p>{image.description}</p>
-                <button className="secondary-shop-button">Shop Now</button>
               </div>
             </div>
           </div>

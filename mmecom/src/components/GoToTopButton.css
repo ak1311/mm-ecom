@@ -2,7 +2,7 @@
   position: fixed !important;
   bottom: 2rem;
   right: 2rem;
-  background-color: #006666 !important;
-  color: white !important;
+  background-color: #ffcc66!important;
+  color: #1aa6eb !important;
   z-index: 1000;
 }
