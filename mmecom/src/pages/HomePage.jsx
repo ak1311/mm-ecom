@@ -10,7 +10,7 @@ const HomePage = () => {
       <SecondaryCarousel />
       <WelcomeBanner />
       <ProductTabsSection />
-      <InStockSection />
+      {/* <InStockSection /> */}
       {/* <SecondaryCarousel /> */}
     </>
   );
