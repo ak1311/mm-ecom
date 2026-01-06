@@ -126,3 +126,19 @@
     text-align: center;
   }
 }
+
+.rotating-text-wrapper {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 255px;
+  height: 255px;
+  pointer-events: none;
+  z-index: 9;
+  animation: spin-text 15s linear infinite;
+}
+
+@keyframes spin-text {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}

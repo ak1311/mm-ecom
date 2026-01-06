@@ -7,7 +7,37 @@ import AlternateEmailIcon from '@mui/icons-material/AlternateEmail'; // Placehol
 
 const Footer = () => {
   return (
-    <footer className="footer">
+    <footer className="footer" style={{ position: 'relative' }}>
+      <div className="rotating-text-wrapper">
+        <svg viewBox="0 0 200 200" width="100%" height="100%">
+          <defs>
+            <path id="textCircle" d="M 100, 100 m -60, 0 a 60,60 0 1,1 120,0 a 60,60 0 1,1 -120,0" />
+          </defs>
+          <circle cx="100" cy="100" r="60" stroke="#ffffff" strokeWidth="28" fill="none" />
+          <text fontSize="14" fontWeight="bold" fill="#7d99aa" letterSpacing="2">
+            <textPath href="#textCircle" startOffset="0">
+              MITHILA MAGIC  •  a taste of Mithila  •
+            </textPath>
+          </text>
+        </svg>
+      </div>
+      <div style={{
+        position: 'absolute',
+        top: '-62.5px',
+        left: '50%',
+        transform: 'translateX(-50%)',
+        width: '125px',
+        height: '125px',
+        backgroundColor: '#FFCC66',
+        borderRadius: '50%',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        boxShadow: '0 4px 10px rgba(0, 0, 0, 0.2)',
+        zIndex: 10
+      }}>
+        <img src="/assets/logo.png" alt="Logo" style={{ width: '60%', height: 'auto', mixBlendMode: 'multiply' }} />
+      </div>
       <div className="upper-footer">
         <div className="footer-columns">
           <div className="footer-column-one">
