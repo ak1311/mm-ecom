@@ -1,6 +1,8 @@
 import React, { useState, useRef } from 'react';
 import ProductCard from './ProductCard';
 import './ProductTabsSection.css';
+import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
 const ProductTabsSection = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -20,18 +22,32 @@ const ProductTabsSection = () => {
     { id: 10, title: 'Product 10', price: 149.99, description: 'Tenth description.', image: 'assets/products/product-1.jpg', sizes: ['400gm', '800gm'] },
     { id: 11, title: 'Product 11', price: 159.99, description: 'Eleventh description.', image: 'assets/products/product-1.jpg', sizes: ['400gm', '800gm'] },
     { id: 12, title: 'Product 12', price: 169.99, description: 'Twelfth description.', image: 'assets/products/product-1.jpg', sizes: ['400gm', '800gm'] },
+    { id: 13, title: 'Product 13', price: 179.99, description: 'Thirteenth description.', image: 'assets/products/product-1.jpg', sizes: ['400gm', '800gm'] },
+    { id: 14, title: 'Product 14', price: 189.99, description: 'Fourteenth description.', image: 'assets/products/product-1.jpg', sizes: ['400gm', '800gm'] },
+    { id: 15, title: 'Product 15', price: 199.99, description: 'Fifteenth description.', image: 'assets/products/product-1.jpg', sizes: ['400gm', '800gm'] },
+    { id: 16, title: 'Product 16', price: 209.99, description: 'Sixteenth description.', image: 'assets/products/product-1.jpg', sizes: ['400gm', '800gm'] },
+    { id: 17, title: 'Product 17', price: 219.99, description: 'Seventeenth description.', image: 'assets/products/product-1.jpg', sizes: ['400gm', '800gm'] },
+    { id: 18, title: 'Product 18', price: 229.99, description: 'Eighteenth description.', image: 'assets/products/product-1.jpg', sizes: ['400gm', '800gm'] },
+    { id: 19, title: 'Product 19', price: 239.99, description: 'Nineteenth description.', image: 'assets/products/product-1.jpg', sizes: ['400gm', '800gm'] },
   ];
 
   const tabs = [
     { label: 'Tab 1', products: products.slice(0, 4) },
     { label: 'Tab 2', products: products.slice(4, 7) },
     { label: 'Tab 3', products: products.slice(7, 12) },
+    { label: 'Tab 4', products: products.slice(12, 15) },
+    { label: 'Tab 5', products: products.slice(15, 19) },
+    { label: 'Tab 6', products: products.slice(0, 5) },
+    { label: 'Tab 7', products: products.slice(5, 10) },
+    { label: 'Tab 8', products: products.slice(10, 15) },
+    { label: 'Tab 9', products: products.slice(2, 7) },
+    { label: 'Tab 10', products: products.slice(8, 13) },
   ];
 
   const scroll = (direction) => {
     if (scrollRef.current) {
       const { current } = scrollRef;
-      const scrollAmount = 280; // Card width (260px) + gap (20px)
+      const scrollAmount = 250; // Card width (230px) + gap (20px)
       if (direction === 'left') {
         current.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
       } else {
@@ -42,28 +58,34 @@ const ProductTabsSection = () => {
 
   return (
     <div className="product-tabs-section">
-      <h2 className="section-heading">Our Products</h2>
-      <p className="section-description">Discover our wide range of delicious products.</p>
-      <div className="tabs-container">
-        <div className="tabs">
-          {tabs.map((tab, index) => (
-            <button
-              key={index}
-              className={`tab-button ${activeTab === index ? 'active' : ''}`}
-              onClick={() => setActiveTab(index)}
-            >
-              {tab.label}
-            </button>
-          ))}
-        </div>
-        <div className="tab-content">
-          <button className="nav-btn left" onClick={() => scroll('left')} aria-label="Scroll left"></button>
-          <div className="product-grid" ref={scrollRef}>
-            {tabs[activeTab].products.map((product) => (
-              <ProductCard key={product.id} product={product} />
+      <div className="product-tabs-container">
+        <h2 className="section-heading">Our Products</h2>
+        <p className="section-description">Discover our wide range of delicious products.</p>
+        <div className="tabs-container">
+          <div className="tabs">
+            {tabs.map((tab, index) => (
+              <button
+                key={index}
+                className={`tab-button ${activeTab === index ? 'active' : ''}`}
+                onClick={() => setActiveTab(index)}
+              >
+                {tab.label}
+              </button>
             ))}
           </div>
-          <button className="nav-btn right" onClick={() => scroll('right')} aria-label="Scroll right"></button>
+          <div className="tab-content">
+            <button className="nav-btn left" onClick={() => scroll('left')} aria-label="Scroll left">
+              <ChevronLeftIcon />
+            </button>
+            <div className="product-grid" ref={scrollRef}>
+              {tabs[activeTab].products.map((product) => (
+                <ProductCard key={product.id} product={product} />
+              ))}
+            </div>
+            <button className="nav-btn right" onClick={() => scroll('right')} aria-label="Scroll right">
+              <ChevronRightIcon />
+            </button>
+          </div>
         </div>
       </div>
     </div>

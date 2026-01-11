@@ -8,6 +8,7 @@
   display: flex;
   flex-direction: column;
   font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  flex-shrink: 0;
 }
 
 .product-top {
