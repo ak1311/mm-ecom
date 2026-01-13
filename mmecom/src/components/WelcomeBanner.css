@@ -1,12 +1,12 @@
 .welcome-banner-container {
-  padding: 20px 0;
+  /* padding: 20px 0; */
   background-color: #f8f9fa;
 }
 
 .welcome-banner {
-  max-width: 1600px;
+  max-width: 1270px;
   height: 138px;
-  margin: 0 auto;
+  margin: 1rem auto;
   /* background-image: url('/assets/banner/banner.jpg'); */
   background: #0d0101;
   background: linear-gradient(309deg, rgba(13, 1, 1, 1) 0%, rgba(26, 167, 236, 1) 100%);
