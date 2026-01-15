@@ -36,7 +36,7 @@ const Footer = () => {
         boxShadow: '0 4px 10px rgba(0, 0, 0, 0.2)',
         zIndex: 10
       }}>
-        <img src="/assets/logo.png" alt="Logo" style={{ width: '60%', height: 'auto', mixBlendMode: 'multiply' }} />
+        <img src="/assets/logo.png" alt="Logo" style={{ width: '80%', height: 'auto', mixBlendMode: 'multiply' }} />
       </div>
       <div className="upper-footer">
         <div className="footer-columns">

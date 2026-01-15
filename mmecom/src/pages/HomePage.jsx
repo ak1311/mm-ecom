@@ -5,6 +5,7 @@ import SecondaryCarousel from '../components/SecondaryCarousel';
 import ProductTabsSection from '../components/ProductTabsSection';
 import InfoSection from '../components/InfoSection';
 import FeaturesSection from '../components/FeaturesSection';
+import TestimonialSection from '../components/TestimonialSection';
 
 const HomePage = () => {
   return (
@@ -13,6 +14,7 @@ const HomePage = () => {
       <WelcomeBanner />
       <ProductTabsSection />
       <InfoSection />
+      <TestimonialSection />
       <FeaturesSection />
       {/* <InStockSection /> */}
       {/* <SecondaryCarousel /> */}
