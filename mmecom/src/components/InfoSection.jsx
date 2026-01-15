@@ -39,7 +39,7 @@ const InfoSection = () => {
         </div>
         
         <div className="info-right">
-          <div className="image-grid">
+          <div className="image-grid" style={{ gap: '10px' }}>
             <img src="/assets/flower/flower-1.jpg" alt="Flower 1" />
             <img src="/assets/flower/flower-2.jpg" alt="Flower 2" />
             <img src="/assets/flower/flower-3.jpg" alt="Flower 3" />

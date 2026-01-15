@@ -3,7 +3,7 @@ import './WelcomeBanner.css';
 
 const WelcomeBanner = () => {
   return (
-    <section className="welcome-banner-container" style={{ maxWidth: '1200px', margin: '2rem auto' }}>
+    <section className="welcome-banner-container">
       <div className="welcome-banner">
         <div className="banner-content">
           <h1>Welcome Offer</h1>
